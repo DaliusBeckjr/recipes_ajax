@@ -15,7 +15,7 @@ def recipes():
 
     return jsonify( recipe.Recipe.get_all_recipes() )
 
-@app.route('/recipes/create' methods = ['POST'])
+@app.route('/recipes/create', methods = ['POST'])
 def create_recipe():
     print (request.form)
     # save the information of recipe
