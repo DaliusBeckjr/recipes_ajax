@@ -10,10 +10,13 @@ def dashboard():
 
     return render_template('dashboard.html')
 
+
 @app.route('/recipes')
 def recipes():
 
     return jsonify( recipe.Recipe.get_all_recipes() )
+
+
 
 @app.route('/recipes/create', methods = ['POST'])
 def create_recipe():
