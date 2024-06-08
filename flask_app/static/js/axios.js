@@ -1,16 +1,16 @@
 const { default: axios } = require("axios");
 
-function validate_login(e) {
+async function validate_login(e) {
     e.preventDefault();
 
 
     formData = new FormData(login);
 
-    axios({
-        method: 'post',
-        url: 'http://localhost:5000/users/login_validation',
-        data: FormData,
-        headers: {'Content-Type': 'multipart/form-data'},
+    backendURI = 'http://localhost:5000/users/login_validation';
+    data = formData
+
+    res = await axios.post(backendURI, data, {
+        headers: {'Content-Type': 'appllication/json'},
     })
     .then(res => console.log(res.data))
     .catch(err => console.error(err))
